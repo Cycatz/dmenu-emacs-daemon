@@ -1,4 +1,4 @@
-* Emacs-daemon-dmenu
+* dmenu-emacs-daemon
 Start/kill the Emacs daemon fast and easily in rofi/dmenu    
 
 #+html:   <img src="assets/start.png" alt="start.png" />

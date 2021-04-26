@@ -1,0 +1,43 @@
+* Emacs-daemon-dmenu
+Start/kill the Emacs daemon fast and easily in rofi/dmenu    
+
+#+html:   <img src="assets/start.png" alt="start.png" />
+#+html:   <img src="assets/kill.png" alt="kill.png" />
+
+
+** Usage 
+
+If you are a =rofi= user, use the script under =rofi= directory; if you use =dmenu=, use the script under =dmenu= directory.   
+
+#+begin_src
+Usage:
+- start: Choose the Emacs server and start the client to communicate it.
+- kill:  Choose the Emacs server to kill.
+#+end_src
+
+*** Start
+#+begin_src 
+Usage '<script-name> start':
+- -d <dir> or --server-dir <dir>
+  - Specify the directory where Emacs server sockets live, default is '/run/user/1000/emacs/'.
+- -t, -nw,  --tty
+  - Create the client frame on the current terminal
+#+end_src
+
+*** Kill
+#+begin_src 
+Usage '<script-name> kill':
+- -d <dir> or --server-dir <dir>
+  - Specify the directory where Emacs server sockets live, default is '/run/user/1000/emacs/'.
+#+end_src
+
+** Note 
+
+You still can pass environment variables into Emacs, like:
+#+begin_src sh 
+LC_CTYPE=zh_TW.UTF-8 TERM=xterm-direct ./rofi/emacs-daemon.sh start 
+#+end_src
+
+These variables are for my input method and true color support.     
+
+

@@ -30,7 +30,7 @@ EOT
 
     mapfile -t sockets < <(command ls -1 "$SERVER_DIR")
 
-    socket_name=$(printf '%s\n' "${sockets[@]}" | dmenu -p "Select the server")
+    socket_name=$(printf '%s\n' "${sockets[@]}" | dmenu -p "Select the server to kill")
     socket_path="${SERVER_DIR}${socket_name}"
 
     emacsclient --eval '(kill-emacs)' --socket-name="$socket_path"
@@ -71,7 +71,7 @@ EOT
     mapfile -t sockets < <(command ls -1 "$SERVER_DIR")
     sockets+=("<no-daemon>")
 
-    socket_name=$(printf '%s\n' "${sockets[@]}" | dmenu -p "Select the server")
+    socket_name=$(printf '%s\n' "${sockets[@]}" | dmenu -p "Select the server to connect to")
 
     if [[ "$socket_name" == "<no-daemon>" ]]; then
         cmd+="emacs"

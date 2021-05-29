@@ -68,6 +68,11 @@ EOT
     local socket_name
     local cmd
 
+	if [[ ! -e "$SERVER_DIR" ]]; then
+    	mkdir -p "$SERVER_DIR"
+    fi
+
+
     mapfile -t sockets < <(command ls -1 "$SERVER_DIR")
     sockets+=("<no-daemon>")
 

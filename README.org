@@ -40,4 +40,6 @@ LC_CTYPE=zh_TW.UTF-8 TERM=xterm-direct ./rofi/emacs-daemon.sh start
 
 These variables are for my input method and true color support.     
 
-
+** Issue
+If you find the emacsclient can not start normally, it probably because the permission of the socket directory is not 700:
+#+html:   <img src="assets/socket_dir_permission_error.png" alt="socket_dir_permission_error.png" />
